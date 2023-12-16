@@ -10,6 +10,8 @@ import Image from "next/image";
 import { table } from "console";
 import ThreadsTab from "@/components/shared/ThreadsTab";
 
+//profile
+
 
 async function Page({params}: {params: {id : string}}){
 
