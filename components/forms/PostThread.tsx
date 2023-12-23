@@ -18,7 +18,8 @@ import { Textarea } from "@/components/ui/textarea";
 import {zodResolver} from "@hookform/resolvers/zod";
  import { useOrganization } from "@clerk/nextjs";
 import { usePathname,useRouter } from "next/navigation";
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 // import { updateUser } from "@/lib/actions/user.actions";
 import { ThreadValidation } from "@/lib/validations/thread";
@@ -67,8 +68,8 @@ const onSubmit = async (values:z.infer<typeof ThreadValidation>) =>{
         path:pathname
 
      });
-
      router.push('/')
+     toast("Thread Create Successfully")
 }
 
     return(
@@ -100,6 +101,7 @@ const onSubmit = async (values:z.infer<typeof ThreadValidation>) =>{
                 Post Thread
 
              </Button>
+             <ToastContainer />
            </form>
       </Form>
     ) 
